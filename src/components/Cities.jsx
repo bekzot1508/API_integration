@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import { toast } from 'react-toastify';
 import {  NavLink } from 'react-router-dom'
+import HomePage from './HomePage.jsx'
 
 const Cities = () => {
     const [category, setCategory] = useState([])
@@ -50,15 +51,13 @@ const Cities = () => {
   
   return (
     <div className="city">
+       <HomePage/>
         <form id="myForm2" onSubmit={createCategory}>
             <input type="text" onChange={(e) => setdata({...data, name:e.target.value})}/>
             <input type="text"  onChange={(e) => setdata({...data, text:e.target.value})}/>
             <input type="file"  onChange={(e) => setdata({...data, images:e.target.files[0]})} />
             <button type='submit'>send</button>
         </form>
-        <NavLink to={"/"}>
-               Home
-        </NavLink> 
         <br />
         <hr />
         <br />
